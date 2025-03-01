@@ -1,14 +1,21 @@
 #include <iostream>
 
-int main()
+int main(int argc, char **argv)
 {
-	int ia;
-	double da;
-	float fa;
-
-	ia = 3;
-	da = 3;
-	fa = 3;
-	std::cout << "ああ、数値を出力！" << ia << da << fa << "\n";
+	if (argc == 1)
+	{
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+	}
+	else
+	{
+		for (int i = 1; i < argc; i++)
+		{
+			for (int j = 0; argv[i][j]; j++)
+			{
+				std::cout << (char)toupper(argv[i][j]);
+			}
+		}
+		std::cout << "\n";
+	}
 	return (0);
 }
